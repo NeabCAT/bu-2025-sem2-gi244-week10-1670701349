@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;
+    public GameObject[] obstaclePrefabs;
     public Vector3 spawnPos = new(25, 0, 0);
 
     public float startDelay = 2;
@@ -17,11 +18,20 @@ public class SpawnManager : MonoBehaviour
 
         InvokeRepeating(nameof(SpawnObstacle), startDelay, repeatRate);
 
-        GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     void SpawnObstacle()
     {
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+
+        if (obstaclePrefabs.Length > 0) 
+        { 
+            int randomObstacles = Random.Range(0, obstaclePrefabs.Length);
+            if (obstaclePrefabs[randomObstacles])
+            {
+                Instantiate(obstaclePrefabs[randomObstacles], spawnPos, obstaclePrefabs[randomObstacles].transform.rotation);
+            }
+        }
+
     }
 }
