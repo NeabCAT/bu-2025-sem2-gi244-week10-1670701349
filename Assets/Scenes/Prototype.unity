@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 5842114324701935107, guid: a0f4f1964968e794793346c5e8a07472, type: 3}
   - {fileID: 4027753661313239480, guid: 7cb9fa34b6a4852499a585f594174462, type: 3}
   - {fileID: 1335197268401802557, guid: 0c0ad71e11338a542a32edb1b1e79fd5, type: 3}
+  - {fileID: 6516983141124577730, guid: 96ed938ed9b65084abaf4ff358a70b21, type: 3}
   spawnPos: {x: 25, y: 0, z: 0}
   startDelay: 2
   repeatRate: 2

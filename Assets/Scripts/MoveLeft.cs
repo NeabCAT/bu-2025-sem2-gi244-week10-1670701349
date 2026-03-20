@@ -21,6 +21,7 @@ public class MoveLeft : MonoBehaviour
             transform.Translate(Vector3.left * Time.deltaTime * speed);
         }
 
+        //Exam03
         if (!playerController.gameOver && playerController.isDash)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed * 2);
