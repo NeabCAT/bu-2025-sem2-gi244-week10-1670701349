@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     //Exam04
-    public int hp;
+    public int hp = 3;
     //Exam02
     public int jumpCount;
     public float jumpForce;
