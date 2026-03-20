@@ -23,6 +23,10 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle()
     {
+        if (playerController.gameOver) 
+        { 
+            return;
+        }
 
         if (obstaclePrefabs.Length > 0) 
         { 
