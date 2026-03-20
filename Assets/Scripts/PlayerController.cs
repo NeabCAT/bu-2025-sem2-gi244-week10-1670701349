@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private InputAction jumpAction;
+    private InputAction dashAction;
     private bool isOnGround = true;
 
     private Animator playerAnim;
     private AudioSource playerAudio;
 
     public bool gameOver = false;
+    public bool isDash = false;
 
     void Awake()
     {
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
 
         jumpAction = InputSystem.actions.FindAction("Jump");
+        dashAction = InputSystem.actions.FindAction("Sprint");
+
 
         gameOver = false;
     }
@@ -49,6 +53,15 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSfx);
+        }
+
+        if (dashAction.IsPressed())
+        {
+            isDash = true;
+        }
+        else
+        {
+            isDash = false;
         }
     }
 
